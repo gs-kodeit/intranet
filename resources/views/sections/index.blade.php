@@ -1,9 +1,5 @@
 @extends('layout')
 
-@section('panel')
-	@include(@dashboard)
-@stop
-
 @section('sidebar')
 	@include('sections.sidebar')	
 @stop

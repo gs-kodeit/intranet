@@ -71,7 +71,7 @@ class ArticleRequestsController extends Controller
         }       
 
         if ($saved) {
-            $request->session()->flash('flash_message', 'Solicitud creada');
+            $request->session()->flash('flash_message_success', 'Solicitud creada');
         }
         
         return back();

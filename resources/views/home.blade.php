@@ -1,9 +1,5 @@
 @extends('layout')
 
-@section('panel')
-    @include('dashboard')
-@stop
-
 @section('form')
     <div class=" col-md-12">
         <form method="POST" action="/request/add">

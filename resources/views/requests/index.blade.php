@@ -1,13 +1,5 @@
 @extends('layout')
 
-@section('panel')
-	@include('dashboard')
-@stop
-
-@section('sidebar')
-	@include('requests.sidebar')
-@stop
-
 @section('modal-delete')
 	<div id="myModalDelete" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -75,7 +67,7 @@
 	</div>
 @stop
 
-@section('content')
+@section('request')
 	<div class="col-md-11">
 		<table class="table table-striped">
 		    <thead>

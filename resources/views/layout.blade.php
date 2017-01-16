@@ -76,7 +76,14 @@
         </style>
     </head>
     <body>
-        @yield('panel')        
+        @if(Auth::check())
+            @if(Auth::user()->isAdmin)
+                @include('adminDashboard')
+            @else
+                @include('regularDashboard')
+            @endif
+        @endif
+        <!--@yield('panel')        -->
         <div class="row">
             <div class="col-md-2">
                 @yield('sidebar')    
@@ -90,11 +97,19 @@
                 </div>                
             </div>            
         </div>        
-        <div class="container col-md-10 col-md-offset-1">
-            @yield('form')
-            @yield('login')
-            @yield('script')
+        <div class="container col-md-10 col-md-offset-1">        
+            @yield('request')
+            @yield('login')            
         </div>
+        <div class="container col-md-11 col-md-offset-1">
+            <div class="col-md-6 col-md-offset-3">
+                @if(Session::has('flash_message_success'))
+                    <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message_success') !!}</em></div>
+                @endif
+            </div>
+            @yield('form')
+        </div>
+        @yield('script')
         <div class="col-md-6 col-md-offset-3">
             @if(Session::has('flash_message'))
                 <div class="alert alert-success"><span class="glyphicon glyphicon-ok"></span><em> {!! session('flash_message') !!}</em></div>
