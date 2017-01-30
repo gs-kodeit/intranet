@@ -20,7 +20,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('article/sections/{id}', 'Controller@sections');
 Route::post('request/add', 'ArticleRequestsController@store');
-;
+Route::get('entry', 'EntriesController@index');
 
 Route::group(['middleware' => 'user'], function(){
 	Route::get('department', 'DepartmentsController@index');
@@ -55,5 +55,5 @@ Route::group(['middleware' => 'user'], function(){
 	Route::get('request', 'ArticleRequestsController@index');
 	Route::get('request/getArticleRequest/{id}', 'Controller@getArticleRequest');
 	Route::patch('request/{articleRequest}', 'ArticleRequestsController@update');
-	Route::delete('request/{articleRequest}', 'ArticleRequestsController@destroy')
+	Route::delete('request/{articleRequest}', 'ArticleRequestsController@destroy');
 });

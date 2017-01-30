@@ -11,7 +11,8 @@
           <li class="{{ setActive('section') }} {{ setActive('section/add') }}"><a href="/section">Secciones</a></li>
           <li class="{{ setActive('article') }} {{ setActive('article/add') }}"><a href="/article">Artículos</a></li>
           <li class="{{ setActive('user') }} {{ setActive('user/add') }}"><a href="/user">Usuarios</a></li>
-          <li class="{{ setActive('request') }}"><a href="/request">Solicitudes</a></li>
+          <li class="{{ setActive('request') }} "><a href="/request">Solicitudes</a></li>
+          <li class="{{ setActive('entry') }} "><a href="/entry">Log</a></li>
         </ul>
       </div>
     </nav>       
